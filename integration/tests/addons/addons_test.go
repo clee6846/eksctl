@@ -37,7 +37,7 @@ var _ = Describe("(Integration) [EKS Addons test]", func() {
 			clusterConfig := api.NewClusterConfig()
 			clusterConfig.Metadata.Name = clusterName
 			clusterConfig.Metadata.Version = "1.19"
-			clusterConfig.Metadata.Region = api.DefaultRegion
+			clusterConfig.Metadata.Region = params.Region
 			clusterConfig.IAM.WithOIDC = api.Enabled()
 			clusterConfig.Addons = []*api.Addon{
 				{
