@@ -54,7 +54,6 @@ type Params struct {
 // on the region field.
 func (p *Params) SetRegion(region string) {
 	p.Region = region
-	p.Region = "ap-northeast-2"
 	p.GenerateCommands()
 }
 
@@ -66,7 +65,6 @@ func (p *Params) GenerateKubeconfigPath() {
 // GenerateCommands generates eksctl commands with the various options & values
 // provided to this `Params` object.
 func (p *Params) GenerateCommands() {
-	p.Region = "ap-northeast-2"
 	p.EksctlCmd = runner.NewCmd(p.EksctlPath).
 		WithArgs("--region", p.Region).
 		WithTimeout(30 * time.Minute)
